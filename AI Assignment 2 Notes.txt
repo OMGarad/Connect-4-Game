@@ -1,0 +1,53 @@
+pseudo-random heuristic during simulation: get 4 checkers in a row
+a row
+Dont let the others get 4 in a row
+
+
+
+The constant c in the UCB formula is used to balance between the exploration term and the exploitation term.
+
+Initially the UCB value for the actions are infinite so we can take any of the actions.
+
+For Q-Learning,
+
+Q-Learning is off-policy, i.e., it uses a different policy to update Q(St, At) than the one used to visit and update state-action pairs.
+The policy pi still determines which state-action pairs are visited and updated and which aren't, which is a requirement for correct convergence.
+
+this is a minimal requirement in the sense that any method
+guaranteed to find optimal behavior in the general case must require it. Under
+this assumption and a variant of the usual stochastic approximation conditions
+on the sequence of step-size parameters, Q has been shown to converge with
+probability 1 to q*.
+
+
+The policy used to update the Q values is a greedy policy, i.e., it chooses the best action to take, rather
+than the action given by the policy.
+
+Alpha in Q-Learning is the leanrning rate. It is usually a small value (like 0.1 or 1).
+Gamma is the discount rate, which we use in order to make sure the value of the argmax value isn't too high.
+
+
+ANSWERS TO ASSIGNMENT QUESTIONS:
+a) 
+1. What choices of parameters gives MC200 a clear advantage in terms of wins in 100 games?
+
+I. As MC200 does 200 simulations, it explores and exploits more than MC40. The exploration part of the UCB algorithm allows the player to explore
+the different branches of the tree (and hence different moves in the game). This also ensures the player that the greedy moves (exploitative moves)
+are actually the optimal moves and that the player isn't missing out on potentially better states.
+As the no. of simulations tends to infinity, the values of the nodes should converge to their actual values and hence, the optimal action will be taken every time by the player.
+
+Hence, large no. of simulations has a very good impact on the player winning.
+
+II. c value in UCB formula
+
+2. What choice of parameters reduces the advantage that MC200 algorithm has?
+
+Opposite of point I
+Opposite of point II
+
+Also blocking the opponent doesn't have a positive reward, so it isn't winning.
+
+b) Will the concepts of afterstates be useful? We use parameters for MCn based on our observations.
+What values of params does Q-learning converge to optimal values in a fast manner?
+
+
